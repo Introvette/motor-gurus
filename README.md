@@ -3,7 +3,7 @@
 Team:
 
 * Yvette Rosario - Sales
-* Celeste Villar -Services
+* Celeste Villar - Service
 
 ## Design
 
