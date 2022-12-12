@@ -32,6 +32,24 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="models">
+            <Route path="new" element={<AddModel />} />
+          </Route>
+          <Route path="/automobiles">
+            <Route path="" element={<ListAutos />} />
+            <Route path="new" element={<AddAuto />} />
+          </Route>
+          <Route path="/customers">
+            <Route path="new" element={<CreateCustomer />} />
+          </Route>
+          <Route path="/salespeople">
+            <Route path="new" element={<CreateSalesPerson />} />
+          </Route>
+          <Route path="/autosales">
+            <Route path="new" element={<CreateSalesRecord />} />
+            <Route path="history" element={<SaleHistory/>} />
+            <Route path="" element={<ListSales/>} />
+          </Route>
           <Route path="technician">
             <Route path="" element={<TechnicianForm />} />
           </Route>
