@@ -46,9 +46,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ALLOWED_HOSTS = [
-    "localhost",
-]
+ALLOWED_HOSTS = ["localhost", "inventory-api"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
@@ -63,9 +61,19 @@ DJWTO_MODE = "TWO-COOKIES"
 DJWTO_ACCESS_TOKEN_LIFETIME = None
 
 ROOT_URLCONF = "sales_project.urls"
+ROOT_URLCONF = "sales_project.urls"
 
 TEMPLATES = [
     {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
         "APP_DIRS": True,
@@ -81,6 +89,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "sales_project.wsgi.application"
+WSGI_APPLICATION = "sales_project.wsgi.application"
 
 
 # Database
@@ -94,6 +103,7 @@ DATABASES["default"] = dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {

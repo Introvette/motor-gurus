@@ -14,6 +14,17 @@ import ListSales from './Sales/AutosList';
 
 
 
+import TechnicianForm from './Services/TechnicianForm';
+import AppointmentList from './Services/AppointmentList';
+import AppointmentForm from './Services/AppointmentForm';
+import ServiceHistory from './Services/ServiceHistory';
+
+import ManufacturerList from './Inventory/ManufacturerList';
+import ManufacturerForm from './Inventory/ManufacturerForm';
+import ModelList from './Inventory/ModelList';
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,23 +32,23 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="technician">
+            <Route path="" element={<TechnicianForm />} />
+          </Route>
+          <Route path="appointment">
+            <Route path="" element={<AppointmentList />} />
+            <Route path="new" element={<AppointmentForm />} />
+            <Route path="history" element={<ServiceHistory />} />
+          </Route>
+          <Route path="manufacturers">
+            <Route path="" element={<ManufacturerList />} />
+            <Route path="new" element={<ManufacturerForm />} />
+          </Route>
+          <Route path="">
+            <Route path="" element={<ServiceHistory />} />
+          </Route>
           <Route path="models">
-            <Route path="new" element={<AddModel />} />
-          </Route>
-          <Route path="/automobiles">
-            <Route path="" element={<ListAutos />} />
-            <Route path="new" element={<AddAuto />} />
-          </Route>
-          <Route path="/customers">
-            <Route path="new" element={<CreateCustomer />} />
-          </Route>
-          <Route path="/salespeople">
-            <Route path="new" element={<CreateSalesPerson />} />
-          </Route>
-          <Route path="/autosales">
-            <Route path="new" element={<CreateSalesRecord />} />
-            <Route path="history" element={<SaleHistory/>} />
-            <Route path="" element={<ListSales/>} />
+            <Route path="" element={<ModelList />} />
           </Route>
         </Routes>
       </div>
