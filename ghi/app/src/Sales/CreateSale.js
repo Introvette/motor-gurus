@@ -40,6 +40,7 @@ class CreateSalesRecord extends React.Component {
     this.setState({automobile:value})
   }
 
+
   async handleSubmit(event) {
     event.preventDefault();
     const data = {...this.state};

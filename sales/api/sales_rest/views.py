@@ -3,7 +3,14 @@ from .models import Autosale, AutomobileVO, Customer, Salesperson
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
-from common.encoders import SalespersonDetailEncoder, SalespersonListEncoder, CustomerDetailEncoder, CustomerListEncoder, AutosaleDetailEncoder, AutosaleListEncoder
+from common.encoders import (
+    SalespersonDetailEncoder,
+    SalespersonListEncoder,
+    CustomerDetailEncoder,
+    CustomerListEncoder,
+    AutosaleDetailEncoder,
+    AutosaleListEncoder,
+)
 from django.db import IntegrityError
 
 
@@ -13,7 +20,7 @@ def list_salespeople(request):
         salespeople = Salesperson.objects.all().order_by("employee_number")
         return JsonResponse(
             {"salespeople": salespeople},
-            encoder = SalespersonListEncoder,
+            encoder=SalespersonListEncoder,
         )
     else:
         try:
@@ -21,7 +28,7 @@ def list_salespeople(request):
             salesperson = Salesperson.objects.create(**content)
             return JsonResponse(
                 salesperson,
-                encoder = SalespersonDetailEncoder,
+                encoder=SalespersonDetailEncoder,
                 safe=False,
             )
         except IntegrityError as e:
@@ -30,6 +37,7 @@ def list_salespeople(request):
                 {"message": "Employee number already exists"},
                 status=400,
             )
+
 
 @require_http_methods(["GET"])
 def show_salesperson(request, pk):
@@ -41,31 +49,27 @@ def show_salesperson(request, pk):
             safe=False,
         )
 
+
 @require_http_methods(["GET", "POST"])
 def list_customers(request):
     if request.method == "GET":
         customers = Customer.objects.all()
-        return JsonResponse(
-            {"customers": customers},
-            encoder = CustomerListEncoder
-        )
+        return JsonResponse({"customers": customers}, encoder=CustomerListEncoder)
     else:
         content = json.loads(request.body)
         customer = Customer.objects.create(**content)
         return JsonResponse(
             customer,
-            encoder = CustomerDetailEncoder,
+            encoder=CustomerDetailEncoder,
             safe=False,
         )
+
 
 @require_http_methods(["GET", "POST"])
 def list_autosales(request):
     if request.method == "GET":
         autosales = Autosale.objects.all()
-        return JsonResponse(
-            {"autosales": autosales},
-            encoder = AutosaleListEncoder
-        )
+        return JsonResponse({"autosales": autosales}, encoder=AutosaleListEncoder)
     else:
         content = json.loads(request.body)
         try:
@@ -83,23 +87,22 @@ def list_autosales(request):
         except Salesperson.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid salesperson name"},
-                status = 400,
+                status=400,
             )
         try:
             customer = Customer.objects.get(customer=content["customer"])
             content["customer"] = customer
         except Customer.DoesNotExist:
-            return JsonResponse(
-                {"message": "Invalid customer name"}
-            )
+            return JsonResponse({"message": "Invalid customer name"})
 
         autosale = Autosale.objects.create(**content)
 
         return JsonResponse(
             autosale,
-            encoder = AutosaleDetailEncoder,
+            encoder=AutosaleDetailEncoder,
             safe=False,
         )
+
 
 @require_http_methods(["DELETE"])
 def delete_autosale(request, pk):

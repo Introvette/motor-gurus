@@ -34,7 +34,7 @@ function CreateSalesPerson() {
         <div className='row'>
             <div className='offset-3 col-6'>
                 <div className='shadow p-4 mt-4'>
-                    <h1>Add a Customer</h1>
+                    <h1>Add a Sales Person</h1>
                     <form onSubmit={handleSubmit} id='-create-hats'>
                         <div className='form-floating mb-3'>
                             <input type='text' className='form-control' id='sales_person' placeholder='Sales Person' value={sales_person} onChange={e => setSalesPerson(e.target.value)} />

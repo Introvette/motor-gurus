@@ -1,8 +1,11 @@
 from django.urls import path
 from .views import (
-    delete_autosale, list_customers, list_salespeople,
-    show_salesperson, list_autosales
-    )
+    delete_autosale,
+    list_customers,
+    list_salespeople,
+    show_salesperson,
+    list_autosales,
+)
 
 urlpatterns = [
     path("customers/", list_customers, name="list_customers"),

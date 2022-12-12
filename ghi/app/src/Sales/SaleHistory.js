@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-class ListSalesPerson extends React.Component {
+class SaleHistory extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -37,8 +36,6 @@ class ListSalesPerson extends React.Component {
         this.setState(cleared);
     }
   }
-
-
 
   handleSalesPersonChange(event) {
     const value = event.target.value
@@ -122,4 +119,4 @@ class ListSalesPerson extends React.Component {
         )
       }
   }
-export default ListSalesPerson
+export default SaleHistory;
