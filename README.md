@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Celeste Villar -Sales
+* Yvette Rosario - Sales
+* Celeste Villar -Service
 
 ## Design
 
