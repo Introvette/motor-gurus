@@ -56,7 +56,6 @@ class CreateSalesRecord extends React.Component {
       },
     };
     const response = await fetch(salerecordURL, fetchConfig);
-console.log(data)
     const automobileURL = `http://localhost:8100/api/automobiles/${this.state.automobile}/`;
     const autofetchConfig = {
       method: "PUT",
