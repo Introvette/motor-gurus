@@ -7,10 +7,9 @@ Team:
 
 ## Design
 
-## Service microservice
+## Sales
 
-Explain your models and integration with the inventory
-microservice, here.
+The goal for the sales microservice is to track customer, sales represetative, and automobile sales data by polling
 
 ## Sales microservice
 
