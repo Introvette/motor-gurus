@@ -1,4 +1,5 @@
 import React from 'react'
+import "./inventorylists.css";
 
 
 class ListAutos extends React.Component {
@@ -35,14 +36,15 @@ class ListAutos extends React.Component {
     return (
       <div>
        <h2>Automobiles</h2>
-      <table className="table table-striped">
+      <table className="styled-table">
       <thead>
         <tr>
-          <th>VIN</th>
-          <th>Color </th>
-          <th>Year</th>
-          <th>Model</th>
-          <th>Manufacturer</th>
+          <th style={{backgroundColor: "white"}}>VIN</th>
+          <th style={{backgroundColor: "white"}}>Color </th>
+          <th style={{backgroundColor: "white"}}>Year</th>
+          <th style={{backgroundColor: "white"}}>Model</th>
+          <th style={{backgroundColor: "white"}}>Manufacturer</th>
+          <th style={{backgroundColor: "white"}}>Image</th>
         </tr>
       </thead>
       <tbody>
@@ -54,6 +56,7 @@ class ListAutos extends React.Component {
             <td>{auto.year}</td>
             <td>{auto.model.name}</td>
             <td>{auto.model.manufacturer.name}</td>
+            <td>{auto.model.picture_url}</td>
           </tr>
         )
        })}

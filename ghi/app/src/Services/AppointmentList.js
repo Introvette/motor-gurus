@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import "./Service.css"
 
 
 class AppointmentList extends React.Component {
@@ -62,7 +63,7 @@ class AppointmentList extends React.Component {
             appointmentHistory = <p>No appointments were found</p>
         } else {
             appointmentHistory =
-                <table className="table table-striped">
+                <table className="styled-table">
                     <thead>
                         <tr>
                             <th>VIN</th>
@@ -71,8 +72,8 @@ class AppointmentList extends React.Component {
                             <th>Time</th>
                             <th>Reason</th>
                             <th>Technician</th>
-                            <th></th>
-                            <th></th>
+                            <th style={{textAlign: "right"}}>Cancel</th>
+                            <th style={{textAlign: "right"}}>Finished</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,10 +87,10 @@ class AppointmentList extends React.Component {
                                     <td>{appointment.reason}</td>
                                     <td>{appointment.technician.name} / Technician ID: {appointment.technician.id} </td>
                                     {<td>
-                                        <button className="btn btn-outline-danger" onClick={() => this.cancelAppointment(appointment.id)}>Cancel</button>
+                                        <button className="btn btn-outline-danger" onClick={() => this.cancelAppointment(appointment.id)}>❌</button>
                                     </td>}
                                     {<td>
-                                        <button className="btn btn-outline-success" onClick={() => this.finishedAppointment(appointment.id)}>Finished</button>
+                                        <button className="btn btn-outline-success" style={{color: "green"}} onClick={() => this.finishedAppointment(appointment.id)}>✔</button>
                                     </td>}
                                 </tr>
                             );
@@ -99,11 +100,12 @@ class AppointmentList extends React.Component {
         }
         return (
             <div className='container pt-5'>
-                <h1>Service Appointments</h1>
-                {appointmentHistory}
+                <h1 className="page-title">Service Appointments</h1>
                 <div className="d-grid gap-2 d-sm-flex justify-content-sm-end">
-                    <Link to="/appointment/new" className="btn btn-success btn-lg px-4 gap-3">Schedule new appointment</Link>
+                    <Link to="/appointment/new" className="btn btn-success btn-lg px-4 gap-3" style={{backgroundColor: "black", borderColor: "white"}}>Schedule new appointment</Link>
+
                 </div>
+                {appointmentHistory}
             </div>
         )
     }

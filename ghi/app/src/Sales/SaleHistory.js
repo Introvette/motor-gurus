@@ -1,4 +1,5 @@
 import React from 'react'
+import "./sales.css"
 
 class SaleHistory extends React.Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class SaleHistory extends React.Component {
   render () {
     return (
         <>
-        <h1>Sales person history</h1>
+        <h1 className="page-title">Sales person history</h1>
           <div className="form-floating mb-3">
             <form onSubmit={this.handleSubmit}>
               <select onChange={this.handleSalesPersonChange} required name="saleperson" id="saleperson" value={this.state.sales_person} className="form-select">
@@ -91,13 +92,13 @@ class SaleHistory extends React.Component {
             </select>
             </form>
           </div>
-            <table className="table table-striped">
+            <table className="styled-table">
               <thead >
                 <tr>
-                  <th>Sales person</th>
-                  <th>Customer</th>
-                  <th>VIN</th>
-                  <th>Sale price</th>
+                  <th style={{backgroundColor: "white"}}>Sales person</th>
+                  <th style={{backgroundColor: "white"}}>Customer</th>
+                  <th style={{backgroundColor: "white"}}>VIN</th>
+                  <th style={{backgroundColor: "white"}}>Sale price</th>
                 </tr>
               </thead>
             <tbody>

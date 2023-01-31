@@ -2,5 +2,10 @@
 .lead {
     font-weight: bolder;
     color:  #000000;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
+}
+
+body {
+    background-color: white
 }

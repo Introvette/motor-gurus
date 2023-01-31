@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import "./inventorylists.css";
 
 
 function ManufacturerList() {
@@ -15,10 +15,10 @@ function ManufacturerList() {
     )
 
     return (
-        <table className="table table-striped">
+        <table className="styled-table">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th style={{backgroundColor: "white"}}>Name</th>
                 </tr>
             </thead>
             <tbody>

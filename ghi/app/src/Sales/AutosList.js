@@ -1,4 +1,5 @@
 import React from 'react'
+import "./sales.css"
 
 
 class ListSales extends React.Component {
@@ -32,14 +33,14 @@ class ListSales extends React.Component {
 
   render () {
     return (
-      <table className="table table-striped">
+      <table className="styled-table">
       <thead >
         <tr>
-          <th>Sale Person</th>
-          <th>Employee Number</th>
-          <th>Customer</th>
-          <th>Price</th>
-          <th>VIN</th>
+          <th style={{backgroundColor: "white"}}>Sale Person</th>
+          <th style={{backgroundColor: "white"}}>Employee Number</th>
+          <th style={{backgroundColor: "white"}}>Customer</th>
+          <th style={{backgroundColor: "white"}}>Price</th>
+          <th style={{backgroundColor: "white"}}>VIN</th>
         </tr>
       </thead>
       <tbody>

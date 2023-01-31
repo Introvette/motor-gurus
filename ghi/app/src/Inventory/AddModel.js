@@ -63,9 +63,10 @@ class AddModel extends React.Component {
     }
     render () {
         return (
-            <div className='container pt-5'>
+            <body>
+            <div className='form-container6'>
                 <div className="offset-3 col-6">
-                    <div className="shadow p-4 mt-4">
+                    <div className="p-4 mt-4">
                     <h1>Create a vehicle model</h1>
                     <form onSubmit={this.handleSubmit} id="addModelForm">
                         <div className="form-floating mb-3">
@@ -87,11 +88,12 @@ class AddModel extends React.Component {
                         </div>
                         <div className="form-floating mb-3">
                             <select
+                            style={{marginLeft: '0px'}}
                                 className="form-select" required id="manufacturer"
                                 onChange={this.handleManufacturerChange} name="manufacturer"
                                 placeholder="manufacturer" value={this.state.manufacturer}
                             >
-                                <option value="">Choose One</option>
+                                <option value="">Choose a model</option>
                                 {this.state.manufacturers.map(manufacturer => {
                                     return (
                                         <option key={manufacturer.id} value={manufacturer.id}>
@@ -100,13 +102,13 @@ class AddModel extends React.Component {
                                     );
                                 })}
                             </select>
-                            <label htmlFor="manufacturer">Manufacturer</label>
                         </div>
-                        <button className="btn btn-primary">Create Model</button>
+                        <button className="btn btn-primary" style={{backgroundColor: "black", borderColor: "white"}}>Create Model</button>
                     </form>
                 </div>
             </div>
         </div>
+        </body>
         )
     };
 }

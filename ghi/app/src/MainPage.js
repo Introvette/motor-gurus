@@ -3,19 +3,21 @@ import "./MainPage.css"
 
 function MainPage() {
   return (
+    <body>
     <div className="px-4 py-5 my-5 text-center">
-      <h1 className="display-5 fw-bold">Motorized</h1>
       <div className="col-lg-6 mx-auto">
       <img
-          src={"./logo.png"}
-          style={{ width: 400, height: 400 }}
+          src={"./logo.gif"}
+          style={{ width: 450, height: 450 }}
         ></img>
 
-        <p className="lead mb-4">
-          The optomized management system for your dealership needs
-        </p>
+<h1 style={{ color: "white" }} className="display-5 fw-bold">
+
+        </h1>
+
       </div>
     </div>
+    </body>
   );
 }
 

@@ -34,19 +34,19 @@ const ServiceHistory = () => {
         <input type="text" className="form-control border border-right-0" placeholder="Enter VIN Number" onChange={(e) => setSearch(e.target.value)} />
 
       </form>
-      <h1 style={{ fontSize: "30px", color: "grey" }}>Service History</h1>
+      <h1 style={{ fontSize: "30px", color: "black" }}>Service History</h1>
       <table className='table table-striped' style={{ fontSize: "14px" }}>
         <thead>
           <tr>
-            <th>VIN</th>
-            <th>Customer Name</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Technician</th>
-            <th>Reason</th>
+            <th style={{backgroundColor: "white"}}>VIN</th>
+            <th style={{backgroundColor: "white"}}>Customer Name</th>
+            <th style={{backgroundColor: "white"}}>Date</th>
+            <th style={{backgroundColor: "white"}}>Time</th>
+            <th style={{backgroundColor: "white"}}>Technician</th>
+            <th style={{backgroundColor: "white"}}>Reason</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{backgroundColor: "white"}}>
           {Results.map(appointment => {
             return (
               <tr key={appointment.id}>

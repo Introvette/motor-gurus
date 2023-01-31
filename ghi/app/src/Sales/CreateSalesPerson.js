@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./FormSales.css"
 
 function CreateSalesPerson() {
     const [sales_person, setSalesPerson] = useState('');
@@ -31,10 +32,12 @@ function CreateSalesPerson() {
     }
 
     return (
+        <body>
+            <h1 className='title'>Add a Sales Person</h1>
+            <div className="form-container-salesperson">
         <div className='row'>
             <div className='offset-3 col-6'>
-                <div className='shadow p-4 mt-4'>
-                    <h1>Add a Sales Person</h1>
+                <div className='p-4 mt-4'>
                     <form onSubmit={handleSubmit} id='-create-hats'>
                         <div className='form-floating mb-3'>
                             <input type='text' className='form-control' id='sales_person' placeholder='Sales Person' value={sales_person} onChange={e => setSalesPerson(e.target.value)} />
@@ -44,11 +47,13 @@ function CreateSalesPerson() {
                             <input type='text' className='form-control' id='employee_number' placeholder='Employee Number' value={employee_number} onChange={e => setEmployeeNumber(e.target.value)} />
                             <label htmlFor='employee_number'>Employee Number</label>
                         </div>
-                        <button type='submit' className='btn btn-primary'>Create</button>
+                        <button type='submit' className='btn btn-primary' style={{backgroundColor: "black", borderColor: "white"}}>Create</button>
                     </form>
                 </div>
             </div>
         </div>
+        </div>
+        </body>
     );
 
 }

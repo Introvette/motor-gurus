@@ -1,4 +1,5 @@
 import React from 'react'
+import "./FormSales.css"
 
 
 class CreateSalesRecord extends React.Component {
@@ -109,10 +110,12 @@ class CreateSalesRecord extends React.Component {
 
   render () {
     return (
+<body>
+<h1 className="title">Create a new sale record</h1>
+      <div className="form-container1">
       <div className="row">
-        <div className="offset-3 col-6">
-          <div className="shadow p-4 mt-4">
-            <h1>Create a new sales record</h1>
+        <div className="offset-0 col-8">
+        <div className='p-4 mt-4'>
             <form onSubmit={this.handleSubmit} id="create">
             <div className="form-floating mb-3">
             <select onChange={this.handleSalesPersonChange} required name="saleperson" id="saleperson" value={this.state.sales_person} className="form-select">
@@ -138,9 +141,8 @@ class CreateSalesRecord extends React.Component {
             })}
             </select>
             </div>
-            <div className="form-floating mb-3">
-            <input onChange={this.handlePriceChange} placeholder="Price" required type="text" name="price" id="price" className="form-control" value={this.state.price} />
-            <label htmlFor="style">Price</label>
+            <div className=" mb-3">
+            <input style={{width: "400px", marginLeft: "200px"}} onChange={this.handlePriceChange} placeholder="Price" required type="text" name="price" id="price" className="form-control" value={this.state.price} />
             </div>
             <div className="form-floating mb-3">
             <select onChange={this.handleAutomobileChange} required name="automobile" id="automobile" value={this.state.automobile} className="form-select">
@@ -154,11 +156,13 @@ class CreateSalesRecord extends React.Component {
             })}
             </select>
             </div>
-              <button className="btn btn-primary">Create</button>
+              <button className="btn btn-primary" style={{backgroundColor: "black", borderColor: "white"}}>Create</button>
             </form>
           </div>
         </div>
+        </div>
       </div>
+      </body>
     )
   }
 }

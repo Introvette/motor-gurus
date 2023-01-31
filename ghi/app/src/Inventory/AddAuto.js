@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import "./FormInventory.css";
 
 class NewAutomobile extends React.Component {
     constructor(props) {
@@ -107,9 +106,10 @@ class NewAutomobile extends React.Component {
 
     render() {
         return (
-            <div className='container pt-5'>
+            <body>
+            <div className='form-container2'>
                 <div className="offset-3 col-6">
-                    <div className="shadow p-3 mt-3">
+                    <div className="p-3 mt-3">
                      <h1>Add an automobile to inventory</h1>
                         <form onSubmit={this.handleSubmit} id="newAutomobileForm">
                             <div className="form-floating mb-3">
@@ -140,11 +140,11 @@ class NewAutomobile extends React.Component {
                             </div>
                             <div className="form-floating mb-3">
                                 <select
-                                    className="form-select" required id="manufacturer"
+                                    className="form-select2" required id="manufacturer"
                                     name="manufacturer" value={this.state.manufacturer}
                                     placeholder="manufacturer" onChange={this.handleManufacturerChange}
                                 >
-                                    <option value="">Choose one</option>
+                                    <option value="">Choose a manufacturer</option>
                                     {this.state.manufacturers.map(manufacturer => {
                                         return (
                                             <option key={manufacturer.id} value={manufacturer.id}>
@@ -153,15 +153,15 @@ class NewAutomobile extends React.Component {
                                         )
                                     })}
                                 </select>
-                                <label htmlFor="manufacturer">Manufacturer</label>
+
                             </div>
                             <div className="form-floating mb-3">
                                 <select
-                                    className="form-select" required id="model_id"
+                                    className="form-select2" required id="model_id"
                                     name="model_id" value={this.state.model_id}
                                     placeholder="model_id" onChange={this.handleModelChange}
                                 >
-                                    <option value="">Choose one</option>
+                                    <option value="">Choose a model</option>
                                     {this.state.availableModels
                                     .map(model => {
                                         return (
@@ -171,13 +171,14 @@ class NewAutomobile extends React.Component {
                                         )
                                     })}
                                 </select>
-                                <label htmlFor="model_id">Model</label>
+
                             </div>
-                            <button className="btn btn-primary">Add</button>
+                            <button className="btn btn-primary" style={{backgroundColor: "black", borderColor: "white"}}>Add</button>
                         </form>
                     </div>
                 </div>
             </div>
+            </body>
         );
     }
 }

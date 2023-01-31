@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./FormSales.css";
 
 function CreateCustomer() {
     const [customer, setCustomer] = useState('');
@@ -35,10 +36,12 @@ function CreateCustomer() {
     }
 
     return (
+<body>
+        <h1 className='title'>Add a Customer</h1>
+        <div className="form-container1">
         <div className='row'>
             <div className='offset-3 col-6'>
-                <div className='shadow p-4 mt-4'>
-                    <h1>Add a Customer</h1>
+            <div className='p-4 mt-4'>
                     <form onSubmit={handleSubmit} id='-create-hats'>
                         <div className='form-floating mb-3'>
                             <input type='text' className='form-control' id='customer' placeholder='Customer' value={customer} onChange={e => setCustomer(e.target.value)} />
@@ -52,11 +55,14 @@ function CreateCustomer() {
                             <input type='text' className='form-control' id='address' placeholder='Phone' value={phone} onChange={e => setPhone(e.target.value)} />
                             <label htmlFor='phone'>Phone</label>
                         </div>
-                        <button type='submit' className='btn btn-primary'>Create</button>
+                        <button type='submit' className='btn btn-primary' style={{backgroundColor: "black", borderColor: "white"}}>Create</button>
                     </form>
                 </div>
             </div>
+            </div>
         </div>
+        </body>
+
     );
 
 }

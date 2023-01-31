@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./FormService.css";
 
 
 export default class AppointmentForm extends Component {
@@ -75,9 +76,11 @@ export default class AppointmentForm extends Component {
 
     render() {
         return (
-            <div className="row">
+            <body>
+            <div className="form-container">
+
                 <div className="offset-3 col-6">
-                    <div className="shadow p-4 mt-4">
+
                         <h1>New Appointment</h1>
                         <form onSubmit={this.handleSubmit} id="create-location-form">
                             <div className="form-floating mb-3">
@@ -89,11 +92,11 @@ export default class AppointmentForm extends Component {
                                 <label htmlFor="owner">Name</label>
                             </div>
                             <div className="form-floating mb-3">
-                                <input value={this.state.date} onChange={this.handleChange} placeholder="Date" required type="text" name="date" id="date" className="form-control" />
+                                <input value={this.state.date} onChange={this.handleChange} placeholder="Date" required type="date" name="date" id="date" className="form-control" />
                                 <label htmlFor="date">Date</label>
                             </div>
                             <div className="form-floating mb-3">
-                                <input value={this.state.time} onChange={this.handleChange} placeholder="Time" required type="text" name="time" id="time" className="form-control" />
+                                <input value={this.state.time} onChange={this.handleChange} placeholder="Time" required type="time" name="time" id="time" className="form-control" />
                                 <label htmlFor="time">Time</label>
                             </div>
                             <div className="mb-3">
@@ -115,11 +118,13 @@ export default class AppointmentForm extends Component {
                             <div className={this.state.successClass} id="success-alert">
                                 Appointment Added
                             </div>
-                            <button className="btn btn-primary">Create</button>
+                            <button className="btn btn-primary" style={{backgroundColor: "black", borderColor: "white"}}>Create</button>
                         </form>
                     </div>
                 </div>
-            </div>
+
+
+            </body>
         )
     }
 }
