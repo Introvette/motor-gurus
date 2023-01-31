@@ -11,6 +11,7 @@ class NewAutomobile extends React.Component {
             color: "",
             year: "",
             vin: "",
+            picture: "",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +20,7 @@ class NewAutomobile extends React.Component {
         this.handleColorChange = this.handleColorChange.bind(this);
         this.handleModelChange = this.handleModelChange.bind(this);
         this.handleManufacturerChange = this.handleManufacturerChange.bind(this);
+        this.handlePictureChange = this.handlePictureChange.bind(this);
     }
 
     async handleSubmit(event) {
@@ -45,7 +47,8 @@ class NewAutomobile extends React.Component {
                 manufacturer: "",
                 model_id: "",
                 vin: "",
-                year: ""
+                year: "",
+                picture:""
             }
             this.setState(cleared);
         } else {
@@ -82,6 +85,10 @@ class NewAutomobile extends React.Component {
             return model.manufacturer.id == value
         })
         this.setState({availableModels: filteredModels})
+    }
+    handlePictureChange(event) {
+        const value = event.target.value;
+        this.setState({picture: value});
     }
 
     async componentDidMount() {
@@ -128,6 +135,15 @@ class NewAutomobile extends React.Component {
                                     id="year" name="year" value={this.state.year}
                                 />
                                 <label htmlFor="year">Year</label>
+                            </div>
+                            <div className="form-floating mb-3">
+                                <input
+                                    className="form-control" required type="text"
+                                    onChange={this.handlePictureChange} id="picture"
+                                    name="picture" value={this.state.picture}
+                                    placeholder="picture"
+                                />
+                                <label htmlFor="picture">Image</label>
                             </div>
                             <div className="form-floating mb-3">
                                 <input

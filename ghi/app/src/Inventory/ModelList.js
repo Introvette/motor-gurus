@@ -23,9 +23,9 @@ class VehicleModelList extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="page-title">Vehicle Models</h1>
-                <div className="d-grid gap-2 d-sm-flex justify-content-sm-right">
-                    <Link to="/models/new/" className="btn btn-primary btn-md px-4 gap-3" style={{backgroundColor: "black", borderColor: "white"}}>Add new vehicle model</Link>
+                <h1 className="page-title" style={{marginLeft: "200px"}}>Vehicle Models</h1>
+                <div>
+                    <Link to="/models/new/" className="btn btn-primary btn-md px-4 gap-3" style={{backgroundColor: "black", borderColor: "white", width: "250px"}}>Add new vehicle model</Link>
                 </div>
                 <p></p>
                 <table className="styled-table">

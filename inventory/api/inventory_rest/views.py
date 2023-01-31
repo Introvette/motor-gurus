@@ -6,6 +6,7 @@ from .encoders import (
     AutomobileEncoder,
     ManufacturerEncoder,
     VehicleModelEncoder,
+    AutomobileListEncoder
 )
 from .models import Automobile, Manufacturer, VehicleModel
 
@@ -16,7 +17,7 @@ def api_automobiles(request):
         autos = Automobile.objects.all()
         return JsonResponse(
             {"autos": autos},
-            encoder=AutomobileEncoder,
+            encoder=AutomobileListEncoder,
         )
     else:
         try:

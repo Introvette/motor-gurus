@@ -32,6 +32,23 @@ class AutomobileEncoder(ModelEncoder):
         "year",
         "vin",
         "model",
+        "picture"
+
+    ]
+    encoders = {
+        "model": VehicleModelEncoder(),
+    }
+
+class AutomobileListEncoder(ModelEncoder):
+    model = Automobile
+    properties = [
+        "id",
+        "color",
+        "year",
+        "vin",
+        "model",
+        "picture"
+
     ]
     encoders = {
         "model": VehicleModelEncoder(),

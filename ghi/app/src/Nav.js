@@ -10,15 +10,14 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="navbar-container" style={{listStyle: "none"}}>
-      <NavLink className="navbar-brand" to="/"></NavLink>
-      <a className="navbar-logo"
-      href="/"
-      style={{color: "white", textDecoration: "none"}}
-
-      >
-          MotorGurus
-
-          </a>
+      <NavLink className="navbar-brand" to="/">
+            <img
+              alt=""
+              src="/logo.png"
+              width="150"
+              height="150"
+            ></img>
+          </NavLink>
 
         <li className="nav-item dropdown">
               <a
