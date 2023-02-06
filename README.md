@@ -1,4 +1,4 @@
-# CarCar
+# MotorGurus
 
 Team:
 
@@ -10,17 +10,27 @@ Team:
 We are polling automobiles from the inventory to our individual microservices by creating automobile value objects.
 In the inventory you can create a manufacturer, to create a model, to then create a vehicle with a unique identifier which is the vin number.
 
-## Sales microservice
+### Tech used:
+Framework- Django
+Languages- Python, JavaScript, HTML, CSS
 
-The goal for the sales microservice is to track customer, sales represetative, and automobile sales data.
-By polling automobiles from the inventory microservice, the application allows you to add a sale to the database with automobiles from the inventory.
+### Deliverables:
+- Can create and view inventory of automobiles
+- Can create and view scheduled, and finished appointments
+- Can create and view technician employees
+- Can create and view automobile sales
 
-For our customer model we collect the customers name, address, and phone number.
-For our automobile value object model we are collecting the vin number, color, year, and status (sold or not) of the automobile.
-For our sales person model we collect the employee's name and create an employee number that's unique to them.
-For our sales model it is made up of the sales person, the customers name, the listing price of the automobile, and the vin number of the specific automobile.
+### Try it out!
+To interact this application on your local machine, please make sure to follow these steps:
 
+- Clone the repository down to your local machine
 
-## Services microservice
+- Open your docker app
 
-With the microservice we create a backend create appointments, list appointments, and a get appointments by vin. We also created a technician for the appointments model to use as a foreign key.
+- Run these commands in order:
+    - docker volume create beta-data
+    - docker compose build
+    - docker compose up
+
+- In your web browser visit http://localhost:3000
+- Be sure to stop and delete the containers afterwards :)
